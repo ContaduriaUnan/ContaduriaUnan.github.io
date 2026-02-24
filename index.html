@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto TCA</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+}
+
+/* Banner */
+
+.banner{
+width:100%;
+display:block;
+}
+
+/* Checkbox */
+#menu-toggle{
+display:none;
+} 
+
+/* Botón hamburguesa */
+
+.hamburger{
+position:fixed;
+top:10px;
+left:10px;
+width:50px;
+height:50px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:1001;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after{
+content:'';
+position:absolute;
+width:28px;
+height:3px;
+background:black;
+border-radius:2px;
+transition:.35s;
+}
+
+.hamburger span::before{ top:-9px; }
+.hamburger span::after{ top:9px; }
+
+/* X */
+
+#menu-toggle:checked + .hamburger span{
+background:transparent;
+}
+
+#menu-toggle:checked + .hamburger span::before{
+transform:rotate(45deg) translate(6px,6px);
+}
+
+#menu-toggle:checked + .hamburger span::after{
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* Sidebar */
+
+.sidebar{
+position:fixed;
+top:0;
+left:-280px;
+width:280px;
+height:100%;
+background:#f8f9fa;
+box-shadow:2px 0 15px rgba(0,0,0,0.2);
+transition:.4s;
+padding:80px 30px;
+z-index:1000;
+}
+
+#menu-toggle:checked ~ .sidebar{
+left:0;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+opacity:0;
+pointer-events:none;
+transition:.3s;
+}
+
+#menu-toggle:checked ~ .overlay{
+opacity:1;
+pointer-events:auto;
+}
+
+/* Contenido */
+
+.content{
+padding:30px 20px;
+max-width:900px;
+margin:auto;
+}
+
+/* Secciones */
+
+.section{
+margin-bottom:40px;
+line-height:1.6;
+font-size:17px;
+}
+
+.section img{
+width:130px;
+margin:15px 0;
+}
+
+/* Botones azules */
+
+.menu-links{
+margin-top:40px;
+}
+
+.menu-links a{
+display:block;
+background:#0b3a66;
+color:white;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* Contacto */
+
+.contacto{
+margin-top:40px;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Banner -->
+<img src="imagenes/banner.png" class="banner">
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="hamburger">
+<span></span>
+</label>
+
+<div class="sidebar">
+<h1>Integrantes</h1>
+<ul>
+<li>Antonio Cruz</li>
+<li>Daniel</li>
+<li>Giganton</li>
+<li>Jocin</li>
+</ul>
+</div>
+
+<label for="menu-toggle" class="overlay"></label>
+
+<div class="content">
+
+<div class="section">
+
+<h2><b>¿Tienes un problema con la alimentación?</b></h2>
+<p><b>Tranqui, no estás solo.</b></p>
+
+<img src="imagenes/hablar.png">
+
+<p>
+Muchas personas en el mundo pasan por dificultades con su alimentación,
+su <b>imagen corporal</b> o su <b>relación con la comida</b>.
+Estudios estiman que aproximadamente <b>8.6 % de las mujeres</b> y
+<b>4 % de los hombres</b> han experimentado algún
+<b>trastorno alimentario</b> en su vida.
+</p>
+
+<p>
+Esto significa que miles de <b>estudiantes y jóvenes</b> atraviesan
+situaciones similares. Reconocerlo <b>no es motivo de vergüenza</b>,
+al contrario: es el <b>primer paso para mejorar tu bienestar</b>.
+</p>
+
+<p>
+Tu <b>salud física y mental</b> es importante,
+y siempre existen formas de recibir apoyo y empezar a sentirte mejor.
+</p>
+
+</div>
+
+<div class="section">
+
+<img src="imagenes/pensar.png">
+
+<h2><b>Señales que pueden indicar un trastorno alimenticio</b></h2>
+
+<p>A veces no es fácil darse cuenta de que algo no está bien. Algunas señales pueden ser:</p>
+
+<p>
+• <b>Pensar constantemente en el peso</b> o la apariencia<br>
+• <b>Sentir culpa o ansiedad</b> después de comer<br>
+• <b>Comer demasiado</b> o dejar de comer por largos periodos<br>
+• <b>Evitar comer con otras personas</b><br>
+• <b>Hacer ejercicio en exceso</b> para compensar
+</p>
+
+<p>
+Si te identificas con varias de estas situaciones,
+es importante recordar que <b>no estás solo</b> ni significa que
+<b>no tenga solución</b>.
+</p>
+
+<p>
+Muchas personas pasan por esto en momentos de
+<b>estrés, presión social o inseguridad personal</b>.
+</p>
+
+</div>
+
+<div class="section">
+
+<img src="imagenes/comparacion.png">
+
+<h2><b>La buena noticia: es posible mejorar</b></h2>
+
+<p>
+Los <b>trastornos alimenticios</b> sí tienen tratamiento y apoyo.
+Con <b>información</b>, <b>acompañamiento</b> y pequeños cambios
+es posible recuperar una relación más sana con la comida
+y contigo mismo.
+</p>
+
+<p><b>Algunas acciones que pueden ayudar:</b></p>
+
+<p>
+• <b>Hablar con alguien de confianza</b><br>
+• <b>Buscar orientación profesional</b><br>
+• <b>Aprender sobre nutrición saludable</b><br>
+• <b>Evitar compararte con estándares irreales</b><br>
+• <b>Recordar que cada cuerpo es diferente</b>
+</p>
+
+<p>
+<b>Pedir ayuda no es debilidad.</b><br>
+Es una <b>señal de valentía y cuidado personal</b>.<br>
+<b>Tu bienestar importa.</b>
+</p>
+
+<img src="imagenes/mejora.png">
+
+<p>
+<b>Cuidar tu salud mental y tu alimentación también es parte de quererte.</b>
+</p>
+
+</div>
+
+<div class="menu-links">
+
+<a href="index.html">
+¿Que es trastorno alimenticio?
+</a>
+
+<a href="solucion.html">
+Solución a los problemas alimenticios
+</a>
+
+<a href="final.html">
+Video informativo
+</a>
+
+</div>
+
+<div class="contacto">
+
+<h2>Información de contacto</h2>
+
+<a href="https://wa.me/50589850143">
+Whatsapp: +505 8985 0143
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
