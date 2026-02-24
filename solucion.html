@@ -1,234 +1,322 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recuperación y cuidado personal</title>
-  
-  <style>
-    :root {
-      --color-texto: #1a1a1a;
-      --color-titulo: #2563eb;       /* ← Cambiado de rojo a azul */
-      --color-fondo: #f8fafc;        /* Fondo más neutro y limpio */
-      --color-seccion: #f0f7ff;      /* Fondo sección muy suave azul claro */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperación y cuidado personal</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
-      line-height: 1.7;
-      font-size: 1.125rem;
-      padding: 20px;
-    }
+:root{
+--azul:#2563eb;
+--fondo:#f8fafc;
+--seccion:#f0f7ff;
+--texto:#1a1a1a;
+}
 
-    .section {
-      background-color: var(--color-seccion);
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      margin: 0 auto 3rem;
-      max-width: 800px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    h2 {
-      color: var(--color-titulo);     /* Azul aplicado aquí */
-      font-size: 2.4rem;
-      margin-bottom: 1.8rem;
-      line-height: 1.2;
-      text-align: center;
-    }
+body{
+font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+background:var(--fondo);
+color:var(--texto);
+line-height:1.7;
+font-size:1.1rem;
+padding:20px;
+}
 
-    h3 {
-      font-size: 1.8rem;
-      margin: 2.2rem 0 1.4rem;
-      color: #1e293b;
-    }
+/* INTRO */
 
-    p {
-      margin-bottom: 1.4rem;
-      font-size: 1.15rem;
-    }
+.intro{
+max-width:900px;
+margin:auto auto 40px;
+text-align:center;
+}
 
-    b, strong {
-      color: var(--color-titulo);     /* Azul en las palabras en negrita */
-      font-weight: 700;
-    }
+.intro h1{
+font-size:2.4rem;
+margin-bottom:10px;
+}
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 1.8rem auto;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    }
+.intro p{
+font-size:1.2rem;
+color:#334155;
+}
 
-    ul {
-      list-style: none;
-      margin: 1.2rem 0 2rem 1.5rem;
-    }
+/* SECCIONES */
 
-    li {
-      margin-bottom: 0.9rem;
-      font-size: 1.15rem;
-      position: relative;
-      padding-left: 1.8rem;
-    }
+.section{
+background:var(--seccion);
+border-radius:12px;
+padding:2.5rem 2rem;
+margin:0 auto 3rem;
+max-width:760px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+transition:.25s;
+}
 
-    li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--color-titulo);     /* Azul en los bullets */
-      font-size: 1.6rem;
-      line-height: 1;
-    }
+.section:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
 
-    /* Para móviles */
-    @media (max-width: 600px) {
-      body {
-        font-size: 1.18rem;
-        padding: 15px;
-      }
-      .section {
-        padding: 2rem 1.4rem;
-      }
-      h2 {
-        font-size: 2.1rem;
-      }
-    }
-  </style>
+h2{
+color:var(--azul);
+font-size:2.2rem;
+margin-bottom:1rem;
+text-align:center;
+}
+
+h3{
+margin-top:2rem;
+font-size:1.5rem;
+}
+
+p{
+margin-bottom:1rem;
+}
+
+strong{
+color:var(--azul);
+}
+
+/* IMÁGENES */
+
+img{
+display:block;
+margin:1.8rem auto;
+max-width:100%;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* LISTAS */
+
+ul{
+list-style:none;
+margin-top:10px;
+}
+
+li{
+margin-bottom:.7rem;
+padding-left:20px;
+position:relative;
+}
+
+li::before{
+content:"•";
+position:absolute;
+left:0;
+color:var(--azul);
+font-size:1.4rem;
+}
+
+/* CAJA CONSEJO */
+
+.tip{
+background:white;
+border-left:5px solid var(--azul);
+padding:14px;
+border-radius:8px;
+margin:18px 0;
+}
+
+/* CONTACTO GRANDE */
+
+.contacto{
+margin-top:60px;
+background:#1d4ed8;
+color:white;
+padding:50px 25px;
+text-align:center;
+}
+
+.contacto h2{
+color:white;
+margin-bottom:10px;
+}
+
+.contacto p{
+max-width:700px;
+margin:auto auto 20px;
+}
+
+.contacto a{
+display:inline-block;
+background:white;
+color:#1d4ed8;
+padding:14px 26px;
+border-radius:8px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+
+/* BOTON FLOTANTE */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.whatsapp:hover{
+transform:scale(1.05);
+}
+
+</style>
 </head>
 <body>
 
-<div class="section">
-  <h2><b>Superar la anorexia: volver a cuidar de ti</b></h2>
-  
-  <img src="imagenes/FLACO1.png" alt="Ilustración de recuperación">
-
-  <p>
-    A veces la relación con la comida se vuelve complicada.<br>
-    Puede empezar con el deseo de <b>controlar el peso, verse mejor o encajar</b>,
-    pero poco a poco el cuerpo y la mente comienzan a sentirse cansados.
-  </p>
-
-  <p>
-    Si te está pasando algo así, <b>no significa que seas débil</b>.<br>
-    Muchas personas han pasado por lo mismo y han logrado salir adelante.
-  </p>
-
-  <p>
-    Tu cuerpo <b>necesita energía para vivir, pensar, estudiar y disfrutar</b>.<br>
-    Comer no es un enemigo, es una forma de cuidarte.
-  </p>
-
-  <p><b>Pequeños pasos que pueden ayudarte</b></p>
-
-  <ul>
-    <li>Recordar que <b>tu valor no depende de tu apariencia</b></li>
-    <li>Comer porciones pequeñas pero constantes</li>
-    <li>Evitar compararte con otras personas</li>
-    <li>Hablar con alguien de confianza</li>
-    <li>Darle tiempo a tu cuerpo para recuperarse</li>
-  </ul>
-
-  <img src="imagenes/FLACO2.png" alt="Ilustración de autocuidado">
-
-  <h3><b>Mini rutina de 3 días para empezar</b></h3>
-
-  <p><b>Día 1</b><br>Intenta hacer <b>tres comidas pequeñas en el día</b>.</p>
-  <p><b>Día 2</b><br>Agrega <b>un alimento que normalmente evitas</b>.</p>
-  <p><b>Día 3</b><br>Come con alguien de confianza o en un lugar tranquilo.</p>
+<div class="intro">
+<h1>Guía para mejorar tu relación con la comida</h1>
+<p>
+Si llegaste aquí buscando ayuda, respira un momento.
+Muchas personas pasan por momentos difíciles con la alimentación.
+Este espacio fue creado para ofrecer información clara,
+tranquila y útil para comenzar a mejorar paso a paso.
+</p>
 </div>
 
-
 <div class="section">
-  <h2><b>Romper el ciclo de los atracones</b></h2>
-  
-  <img src="imagenes/GORDO1.png" alt="Ilustración sobre atracones">
 
-  <p>
-    Muchas personas han vivido momentos donde <b>comer se vuelve una forma
-    de liberar estrés, tristeza o ansiedad</b>.<br>
-    Después de eso pueden aparecer culpa o frustración.
-  </p>
+<h2>Superar la anorexia: volver a cuidar de ti</h2>
 
-  <p>
-    Pero esto <b>no significa que no tengas fuerza de voluntad</b>.<br>
-    Tu mente está buscando una forma de lidiar con lo que sientes.
-  </p>
+<img src="imagenes/FLACO1.png">
 
-  <p>
-    La buena noticia es que <b>ese ciclo puede cambiar</b>.
-  </p>
+<p>
+A veces la relación con la comida cambia poco a poco.
+Puede empezar con el deseo de controlar el peso,
+pero con el tiempo el cuerpo y la mente empiezan a cansarse.
+</p>
 
-  <p><b>Cosas que pueden ayudarte</b></p>
-
-  <ul>
-    <li>Comer de forma más regular durante el día</li>
-    <li>Dormir lo suficiente</li>
-    <li>Identificar qué emociones aparecen antes de comer</li>
-    <li>No castigarte después de un episodio</li>
-    <li>Entender que mejorar toma tiempo</li>
-  </ul>
-
-  <img src="imagenes/GORDO2.png" alt="Ilustración de calma">
-
-  <h3><b>Mini rutina de 3 días</b></h3>
-
-  <p><b>Día 1</b><br>Organiza <b>horarios simples de comida</b>.</p>
-  <p><b>Día 2</b><br>Antes de comer por impulso, <b>detente unos minutos</b>.</p>
-  <p><b>Día 3</b><br>Haz una actividad corta cuando aparezca la ansiedad.</p>
+<div class="tip">
+Recuperarse no significa hacerlo perfecto.
+Significa volver a escucharte y cuidarte poco a poco.
 </div>
 
+<p>
+El cuerpo necesita energía para pensar,
+estudiar y vivir.
+Comer es una forma de cuidar tu salud.
+</p>
+
+<ul>
+<li>Tu valor no depende de tu apariencia</li>
+<li>Comer pequeñas cantidades varias veces al día</li>
+<li>No compararte con otras personas</li>
+<li>Hablar con alguien de confianza</li>
+<li>Tener paciencia contigo mismo</li>
+</ul>
+
+<img src="imagenes/FLACO2.png">
+
+<h3>Mini rutina de 3 días</h3>
+
+<p><strong>Día 1</strong> – Haz tres comidas pequeñas.</p>
+<p><strong>Día 2</strong> – Agrega un alimento que normalmente evitas.</p>
+<p><strong>Día 3</strong> – Come con alguien o en un lugar tranquilo.</p>
+
+</div>
 
 <div class="section">
-  <h2><b>Salir de la bulimia y recuperar la calma</b></h2>
-  
-  <img src="imagenes/VOMITO1.png" alt="Ilustración de recuperación emocional">
 
-  <p>
-    Cuando una persona siente que debe <b>compensar lo que comió</b>,
-    suele aparecer mucha presión interna.<br>
-    Esto puede provocar cansancio físico y emocional.
-  </p>
+<h2>Romper el ciclo de los atracones</h2>
 
-  <p>
-    Pero es importante saber algo:<br>
-    <b>No estás solo y sí es posible mejorar.</b>
-  </p>
+<img src="imagenes/GORDO1.png">
 
-  <p>
-    Tu cuerpo no necesita castigos.<br>
-    <b>Necesita equilibrio, descanso y comprensión.</b>
-  </p>
+<p>
+A veces la comida se vuelve una forma de manejar emociones.
+Después pueden aparecer culpa o frustración.
+</p>
 
-  <p><b>Ideas que pueden ayudarte</b></p>
-
-  <ul>
-    <li>Comer con horarios más estables</li>
-    <li>Evitar pensamientos extremos sobre la comida</li>
-    <li>Practicar la paciencia contigo mismo</li>
-    <li>Buscar apoyo cuando lo necesites</li>
-    <li>Recordar que mejorar es un proceso</li>
-  </ul>
-
-  <img src="imagenes/VOMITO2.png" alt="Ilustración de paz interior">
-
-  <h3><b>Mini rutina de 3 días</b></h3>
-
-  <p><b>Día 1</b><br>Haz comidas normales sin intentar compensar después.</p>
-  <p><b>Día 2</b><br>Cuando aparezca la culpa, respira profundo y recuerda
-    que <b>comer es una necesidad del cuerpo</b>.</p>
-  <p><b>Día 3</b><br>Intenta mantener tu rutina diaria normal.</p>
+<div class="tip">
+Esto no significa que seas débil.
+Significa que necesitas apoyo y comprensión.
 </div>
+
+<ul>
+<li>Comer en horarios regulares</li>
+<li>Dormir mejor</li>
+<li>Identificar emociones antes de comer</li>
+<li>No castigarte después</li>
+<li>Recordar que mejorar toma tiempo</li>
+</ul>
+
+<img src="imagenes/GORDO2.png">
+
+<h3>Mini rutina de 3 días</h3>
+
+<p><strong>Día 1</strong> – Organiza horarios simples.</p>
+<p><strong>Día 2</strong> – Respira antes de comer por impulso.</p>
+<p><strong>Día 3</strong> – Haz otra actividad cuando aparezca ansiedad.</p>
+
+</div>
+
+<div class="section">
+
+<h2>Salir de la bulimia y recuperar la calma</h2>
+
+<img src="imagenes/VOMITO1.png">
+
+<p>
+Cuando aparece la necesidad de compensar lo que se comió,
+puede sentirse mucha presión emocional.
+</p>
+
+<div class="tip">
+Tu cuerpo necesita equilibrio,
+no castigos.
+</div>
+
+<ul>
+<li>Comer en horarios estables</li>
+<li>Evitar pensamientos extremos</li>
+<li>Tener paciencia contigo</li>
+<li>Buscar apoyo</li>
+<li>Recordar que es un proceso</li>
+</ul>
+
+<img src="imagenes/VOMITO2.png">
+
+<h3>Mini rutina de 3 días</h3>
+
+<p><strong>Día 1</strong> – Haz comidas normales.</p>
+<p><strong>Día 2</strong> – Respira cuando aparezca la culpa.</p>
+<p><strong>Día 3</strong> – Mantén tu rutina diaria.</p>
+
+</div>
+
+<div class="contacto">
+
+<h2>¿Necesitas hablar con alguien?</h2>
+
+<p>
+Hablar puede ayudarte más de lo que imaginas.
+Si necesitas orientación o simplemente quieres contar lo que pasa,
+puedes escribirnos.
+</p>
+
+<a href="https://wa.me/50589850143">
+Contactar por WhatsApp
+</a>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/50589850143">
+WhatsApp
+</a>
 
 </body>
 </html>
