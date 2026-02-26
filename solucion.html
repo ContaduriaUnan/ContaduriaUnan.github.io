@@ -10,7 +10,7 @@
 :root{
 --azul:#2563eb;
 --fondo:#f8fafc;
---seccion:#f0f7ff;
+--seccion:#eef5ff;
 --texto:#1a1a1a;
 }
 
@@ -24,139 +24,127 @@ body{
 font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 background:var(--fondo);
 color:var(--texto);
-line-height:1.7;
-font-size:1.1rem;
+line-height:1.55;
+font-size:1rem;
 padding:20px;
 }
 
 /* INTRO */
 
 .intro{
-max-width:900px;
-margin:auto auto 40px;
+max-width:850px;
+margin:0 auto 30px;
 text-align:center;
 }
 
 .intro h1{
-font-size:2.4rem;
-margin-bottom:10px;
+font-size:2rem;
+margin-bottom:8px;
 }
 
 .intro p{
-font-size:1.2rem;
-color:#334155;
+color:#475569;
 }
 
 /* SECCIONES */
 
 .section{
 background:var(--seccion);
-border-radius:12px;
-padding:2.5rem 2rem;
-margin:0 auto 3rem;
+border-radius:10px;
+padding:1.8rem;
+margin:0 auto 2rem;
 max-width:760px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-transition:.25s;
+box-shadow:0 4px 15px rgba(0,0,0,.07);
 }
 
-.section:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-}
-
-h2{
+.section h2{
 color:var(--azul);
-font-size:2.2rem;
-margin-bottom:1rem;
+font-size:1.6rem;
+margin-bottom:10px;
 text-align:center;
 }
 
-h3{
-margin-top:2rem;
-font-size:1.5rem;
+.section h3{
+margin:15px 0 8px;
+font-size:1.2rem;
+color:#1e3a8a;
 }
 
 p{
-margin-bottom:1rem;
+margin-bottom:10px;
 }
 
-strong{
-color:var(--azul);
-}
-
-/* IMÁGENES */
+/* IMÁGENES MÁS PEQUEÑAS */
 
 img{
 display:block;
-margin:1.8rem auto;
-max-width:100%;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+margin:12px auto;
+width:70%;
+max-width:320px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
 
-/* LISTAS */
+/* LISTAS MÁS ORDENADAS */
 
 ul{
-list-style:none;
-margin-top:10px;
+margin:8px 0 12px 18px;
 }
 
 li{
-margin-bottom:.7rem;
-padding-left:20px;
-position:relative;
-}
-
-li::before{
-content:"•";
-position:absolute;
-left:0;
-color:var(--azul);
-font-size:1.4rem;
+margin-bottom:6px;
 }
 
 /* CAJA CONSEJO */
 
 .tip{
 background:white;
-border-left:5px solid var(--azul);
-padding:14px;
-border-radius:8px;
-margin:18px 0;
+border-left:4px solid var(--azul);
+padding:10px;
+border-radius:6px;
+margin:10px 0;
+font-size:.95rem;
 }
 
-/* CONTACTO GRANDE */
+/* MINI RUTINA */
+
+.rutina{
+background:#ffffff;
+padding:12px;
+border-radius:8px;
+margin-top:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.rutina p{
+margin-bottom:6px;
+}
+
+/* CONTACTO */
 
 .contacto{
-margin-top:60px;
+margin-top:40px;
 background:#1d4ed8;
 color:white;
-padding:50px 25px;
+padding:35px 20px;
 text-align:center;
+border-radius:12px;
 }
 
 .contacto h2{
-color:white;
 margin-bottom:10px;
-}
-
-.contacto p{
-max-width:700px;
-margin:auto auto 20px;
 }
 
 .contacto a{
 display:inline-block;
 background:white;
 color:#1d4ed8;
-padding:14px 26px;
+padding:12px 22px;
 border-radius:8px;
 font-weight:600;
 text-decoration:none;
-box-shadow:0 6px 18px rgba(0,0,0,.2);
+margin-top:10px;
 }
-
-/* BOTON FLOTANTE */
 
 .whatsapp{
 position:fixed;
@@ -164,15 +152,11 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:14px 18px;
-border-radius:50px;
+padding:12px 16px;
+border-radius:40px;
 font-weight:600;
 text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-
-.whatsapp:hover{
-transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 </style>
@@ -181,13 +165,10 @@ transform:scale(1.05);
 
 <div class="intro">
 <h1>Guía para mejorar tu relación con la comida</h1>
-<p>
-Si llegaste aquí buscando ayuda, respira un momento.
-Muchas personas pasan por momentos difíciles con la alimentación.
-Este espacio fue creado para ofrecer información clara,
-tranquila y útil para comenzar a mejorar paso a paso.
-</p>
+<p>Recuperarte no es hacerlo perfecto. Es avanzar poco a poco con más equilibrio y cuidado.</p>
 </div>
+
+<!-- ANOREXIA -->
 
 <div class="section">
 
@@ -195,40 +176,30 @@ tranquila y útil para comenzar a mejorar paso a paso.
 
 <img src="imagenes/FLACO1.png">
 
-<p>
-A veces la relación con la comida cambia poco a poco.
-Puede empezar con el deseo de controlar el peso,
-pero con el tiempo el cuerpo y la mente empiezan a cansarse.
-</p>
+<p>Cuando el control sobre la comida se vuelve extremo, el cuerpo empieza a debilitarse. Recuperarse significa volver a darle energía a tu vida.</p>
 
-<div class="tip">
-Recuperarse no significa hacerlo perfecto.
-Significa volver a escucharte y cuidarte poco a poco.
-</div>
+<div class="tip">Tu valor no depende de tu peso ni de tu apariencia.</div>
 
-<p>
-El cuerpo necesita energía para pensar,
-estudiar y vivir.
-Comer es una forma de cuidar tu salud.
-</p>
-
+<h3>Empieza por:</h3>
 <ul>
-<li>Tu valor no depende de tu apariencia</li>
-<li>Comer pequeñas cantidades varias veces al día</li>
-<li>No compararte con otras personas</li>
-<li>Hablar con alguien de confianza</li>
-<li>Tener paciencia contigo mismo</li>
+<li>Comer 3 comidas principales aunque sean pequeñas</li>
+<li>Agregar un alimento que sueles evitar</li>
+<li>Beber suficiente agua</li>
+<li>Evitar compararte con otros</li>
 </ul>
 
 <img src="imagenes/FLACO2.png">
 
+<div class="rutina">
 <h3>Mini rutina de 3 días</h3>
-
-<p><strong>Día 1</strong> – Haz tres comidas pequeñas.</p>
-<p><strong>Día 2</strong> – Agrega un alimento que normalmente evitas.</p>
-<p><strong>Día 3</strong> – Come con alguien o en un lugar tranquilo.</p>
+<p><strong>Día 1:</strong> Haz desayuno, almuerzo y cena sin saltarlos.</p>
+<p><strong>Día 2:</strong> Añade una merienda pequeña (fruta, yogur o pan).</p>
+<p><strong>Día 3:</strong> Come acompañado o en un lugar tranquilo sin distracciones.</p>
+</div>
 
 </div>
+
+<!-- ATRACONES -->
 
 <div class="section">
 
@@ -236,33 +207,36 @@ Comer es una forma de cuidar tu salud.
 
 <img src="imagenes/GORDO1.png">
 
-<p>
-A veces la comida se vuelve una forma de manejar emociones.
-Después pueden aparecer culpa o frustración.
-</p>
+<p>Los atracones muchas veces aparecen por ansiedad o emociones acumuladas, no por falta de fuerza.</p>
 
-<div class="tip">
-Esto no significa que seas débil.
-Significa que necesitas apoyo y comprensión.
-</div>
+<div class="tip">No necesitas castigarte. Necesitas equilibrio.</div>
 
+<h3>Evita:</h3>
 <ul>
-<li>Comer en horarios regulares</li>
+<li>Pasar muchas horas sin comer</li>
+<li>Dietas extremas</li>
+<li>Comer directamente del paquete</li>
+</ul>
+
+<h3>Intenta:</h3>
+<ul>
+<li>Comer cada 3-4 horas</li>
 <li>Dormir mejor</li>
-<li>Identificar emociones antes de comer</li>
-<li>No castigarte después</li>
-<li>Recordar que mejorar toma tiempo</li>
+<li>Identificar qué emoción sientes antes de comer</li>
 </ul>
 
 <img src="imagenes/GORDO2.png">
 
+<div class="rutina">
 <h3>Mini rutina de 3 días</h3>
-
-<p><strong>Día 1</strong> – Organiza horarios simples.</p>
-<p><strong>Día 2</strong> – Respira antes de comer por impulso.</p>
-<p><strong>Día 3</strong> – Haz otra actividad cuando aparezca ansiedad.</p>
+<p><strong>Día 1:</strong> Organiza horarios básicos de comida.</p>
+<p><strong>Día 2:</strong> Antes de un impulso, respira 10 veces profundo.</p>
+<p><strong>Día 3:</strong> Sustituye un impulso por caminar 10 minutos o escribir lo que sientes.</p>
+</div>
 
 </div>
+
+<!-- BULIMIA -->
 
 <div class="section">
 
@@ -270,53 +244,36 @@ Significa que necesitas apoyo y comprensión.
 
 <img src="imagenes/VOMITO1.png">
 
-<p>
-Cuando aparece la necesidad de compensar lo que se comió,
-puede sentirse mucha presión emocional.
-</p>
+<p>Compensar lo que comes daña tu cuerpo y aumenta la ansiedad. La recuperación se basa en estabilidad.</p>
 
-<div class="tip">
-Tu cuerpo necesita equilibrio,
-no castigos.
-</div>
+<div class="tip">Tu cuerpo necesita constancia, no castigos.</div>
 
+<h3>Enfócate en:</h3>
 <ul>
-<li>Comer en horarios estables</li>
-<li>Evitar pensamientos extremos</li>
-<li>Tener paciencia contigo</li>
-<li>Buscar apoyo</li>
-<li>Recordar que es un proceso</li>
+<li>Mantener horarios regulares</li>
+<li>No saltarte comidas</li>
+<li>Reducir pensamientos extremos como “todo o nada”</li>
+<li>Buscar apoyo profesional si es posible</li>
 </ul>
 
 <img src="imagenes/VOMITO2.png">
 
+<div class="rutina">
 <h3>Mini rutina de 3 días</h3>
-
-<p><strong>Día 1</strong> – Haz comidas normales.</p>
-<p><strong>Día 2</strong> – Respira cuando aparezca la culpa.</p>
-<p><strong>Día 3</strong> – Mantén tu rutina diaria.</p>
+<p><strong>Día 1:</strong> Haz comidas normales sin compensar después.</p>
+<p><strong>Día 2:</strong> Cuando aparezca culpa, espera 20 minutos antes de actuar.</p>
+<p><strong>Día 3:</strong> Mantén tu rutina diaria (estudio, trabajo o ejercicio ligero).</p>
+</div>
 
 </div>
 
 <div class="contacto">
-
 <h2>¿Necesitas hablar con alguien?</h2>
-
-<p>
-Hablar puede ayudarte más de lo que imaginas.
-Si necesitas orientación o simplemente quieres contar lo que pasa,
-puedes escribirnos.
-</p>
-
-<a href="https://wa.me/50589850143">
-Contactar por WhatsApp
-</a>
-
+<p>Buscar ayuda es un acto de valentía. Si necesitas orientación, puedes escribirnos.</p>
+<a href="https://wa.me/50589850143">Contactar por WhatsApp</a>
 </div>
 
-<a class="whatsapp" href="https://wa.me/50589850143">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/50589850143">WhatsApp</a>
 
 </body>
 </html>
