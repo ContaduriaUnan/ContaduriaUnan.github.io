@@ -187,7 +187,44 @@ font-size:18px;
 margin-top:40px;
 font-size:18px;
 }
+/* BLOQUEO INFORMACIÓN */
 
+.lock-box{
+background:#dbeafe;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+}
+
+.lock-box input{
+width:100%;
+padding:8px;
+margin-top:8px;
+border-radius:6px;
+border:1px solid #94a3b8;
+background:#e2e8f0;
+}
+
+.lock-box button{
+margin-top:10px;
+width:100%;
+padding:8px;
+border:none;
+border-radius:6px;
+background:#0b3a66;
+color:white;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+}
+
+.error{
+color:red;
+font-size:13px;
+margin-top:6px;
+}
 </style>
 </head>
 
@@ -203,6 +240,17 @@ font-size:18px;
 </label>
 
 <div class="sidebar">
+
+<h2>Información del trabajo</h2>
+
+<div id="lockSection" class="lock-box">
+<p><b>Ingrese contraseña para ver detalles</b></p>
+<input type="password" id="passwordInput" placeholder="Contraseña">
+<button onclick="unlockInfo()">Desbloquear</button>
+<p id="errorMsg" class="error"></p>
+</div>
+
+<div id="protectedContent" class="hidden">
 
 <h2>Nombre del trabajo</h2>
 <p><b>Los trastornos de la conducta alimentaria (TCA)</b></p>
@@ -227,6 +275,8 @@ XXXXXX<br>
 
 <h3>Fecha</h3>
 <p>01 / 03 / 2026</p>
+
+</div>
 
 </div>
 
@@ -340,6 +390,31 @@ Whatsapp: +505 8985 0143
 </div>
 
 </div>
+<script>
+const correctPassword = "123ABC"; // CAMBIA ESTO
 
+function unlockInfo(){
+const input = document.getElementById("passwordInput").value;
+const errorMsg = document.getElementById("errorMsg");
+
+if(input === correctPassword){
+document.getElementById("lockSection").style.display="none";
+document.getElementById("protectedContent").classList.remove("hidden");
+}else{
+errorMsg.textContent="Contraseña incorrecta";
+}
+}
+
+/* REBLOQUEAR CUANDO SE CIERRE EL MENÚ */
+document.getElementById("menu-toggle").addEventListener("change", function(){
+if(!this.checked){
+document.getElementById("protectedContent").classList.add("hidden");
+document.getElementById("lockSection").style.display="block";
+document.getElementById("passwordInput").value="";
+document.getElementById("errorMsg").textContent="";
+}
+});
+</script>
 </body>
 </html>
+
