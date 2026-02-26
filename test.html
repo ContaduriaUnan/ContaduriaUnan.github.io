@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Evaluación Clínica</title>
+
+<style> 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0a0f14;
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+color:#e6edf3;
+overflow-x:hidden;
+}
+
+.app{
+min-height:100vh;
+width:100%;
+padding:20px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+width:100%;
+max-width:750px;
+background:#161b22;
+border-radius:30px;
+padding:30px 25px;
+box-shadow:0 0 60px rgba(0,0,0,0.7);
+}
+
+h1{
+text-align:center;
+font-size:22px;
+margin-bottom:30px;
+letter-spacing:1px;
+font-weight:500;
+color:#ffffff;
+}
+
+.card{
+background:#1f2630;
+padding:20px;
+border-radius:20px;
+margin-bottom:25px;
+}
+
+h3{
+margin-bottom:15px;
+font-size:16px;
+font-weight:500;
+}
+
+label{
+display:block;
+margin:10px 0;
+font-size:14px;
+}
+
+input[type="radio"]{
+margin-right:8px;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-left:6px solid;
+border-radius:12px;
+display:none;
+font-size:14px;
+line-height:1.5;
+}
+
+.verde{border-color:#2ecc71;}
+.amarillo{border-color:#f1c40f;}
+.naranja{border-color:#e67e22;}
+.rojo{border-color:#e74c3c;}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:#238636;
+color:white;
+font-weight:600;
+margin-top:15px;
+font-size:15px;
+}
+
+button:active{
+transform:scale(0.98);
+}
+
+.resumenFinal{
+margin-top:30px;
+padding:20px;
+background:#11161c;
+border-radius:18px;
+display:none;
+font-size:14px;
+line-height:1.6;
+}
+
+.evitar{
+margin-top:40px;
+}
+
+.evitar h2{
+font-size:18px;
+margin-bottom:20px;
+font-weight:500;
+}
+
+.evitar-item{
+display:flex;
+align-items:center;
+background:#1f2630;
+padding:15px;
+border-radius:18px;
+margin-bottom:15px;
+}
+
+.evitar-item img{
+width:70px;
+height:70px;
+object-fit:contain;
+margin-right:15px;
+}
+
+.evitar-item p{
+font-size:14px;
+line-height:1.4;
+}
+.container .footer-note{
+font-size:11px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+<div class="container">
+
+<h1>Evaluación Personal de Bienestar</h1>
+
+<form id="quiz">
+
+<div class="card">
+<h3>1. Cuando terminas de comer y estás lleno/a...</h3>
+<label><input type="radio" name="q1" value="culpa"> Siento culpa.</label>
+<label><input type="radio" name="q1" value="incomodo"> Me incomoda un poco.</label>
+<label><input type="radio" name="q1" value="vomitar"> Pienso en compensar.</label>
+<label><input type="radio" name="q1" value="tranquilo"> Me siento tranquilo/a.</label>
+<div class="result" id="r-q1"></div>
+</div>
+
+<div class="card">
+<h3>2. Cuando estás bajo presión...</h3>
+<label><input type="radio" name="q2" value="exceso"> Como más.</label>
+<label><input type="radio" name="q2" value="evito"> Evito comer.</label>
+<label><input type="radio" name="q2" value="cambio"> Cambio mi rutina.</label>
+<label><input type="radio" name="q2" value="equilibrio"> Mantengo equilibrio.</label>
+<div class="result" id="r-q2"></div>
+</div>
+
+<div class="card">
+<h3>3. Sobre tu imagen corporal...</h3>
+<label><input type="radio" name="q3" value="nunca"> Nunca estoy conforme.</label>
+<label><input type="radio" name="q3" value="comparacion"> Me comparo mucho.</label>
+<label><input type="radio" name="q3" value="inseguro"> A veces inseguro/a.</label>
+<label><input type="radio" name="q3" value="aceptacion"> Me acepto sanamente.</label>
+<div class="result" id="r-q3"></div>
+</div>
+
+<div class="card">
+<h3>4. Cuando comes en público...</h3>
+<label><input type="radio" name="q4" value="ansiedad"> Siento ansiedad.</label>
+<label><input type="radio" name="q4" value="observado"> Siento que me observan.</label>
+<label><input type="radio" name="q4" value="neutral"> Me es indiferente.</label>
+<label><input type="radio" name="q4" value="tranquilo"> Me siento tranquilo/a.</label>
+<div class="result" id="r-q4"></div>
+</div>
+
+<div class="card">
+<h3>5. Cuando tienes un “desliz”...</h3>
+<label><input type="radio" name="q5" value="castigo"> Me castigo mentalmente.</label>
+<label><input type="radio" name="q5" value="control"> Intento compensarlo.</label>
+<label><input type="radio" name="q5" value="culpa"> Siento culpa.</label>
+<label><input type="radio" name="q5" value="normal"> Lo veo normal y continúo.</label>
+<div class="result" id="r-q5"></div>
+</div>
+
+<button type="button" onclick="analizar()">Analizar</button>
+<button type="button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+
+</form>
+
+<div class="resumenFinal" id="resumenFinal"></div>
+
+<div class="evitar">
+<h2>Cosas que debes evitar más:</h2>
+
+<div class="evitar-item">
+<img src="imagenes/cigarro.png">
+<p><strong>Cigarro:</strong> Puede aumentar la ansiedad y alterar tu equilibrio interno.</p>
+</div>
+
+<div class="evitar-item">
+<img src="imagenes/alcohol.png">
+<p><strong>Alcohol:</strong> Deteriora tu nutrición y estabilidad emocional.</p>
+</div>
+
+<div class="evitar-item">
+<img src="imagenes/rrss.png">
+<p><strong>Redes sociales:</strong> Pueden distorsionar tu percepción corporal.</p>
+
+
+</div>
+<div class="footer-note">
+Evaluación personal hecha por estudiantes de la Universidad UNAN-León
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+const respuestas={
+q1:{
+culpa:["amarillo","Sentir culpa indica autoexigencia elevada."],
+incomodo:["naranja","Incomodidad repetida merece observación."],
+vomitar:["rojo","Compensar es señal importante de alerta."],
+tranquilo:["verde","Relación estable con la alimentación."]
+},
+q2:{
+exceso:["naranja","La comida no debería ser escape emocional constante."],
+evito:["rojo","Evitar comer puede afectar tu bienestar."],
+cambio:["amarillo","Cambios ocasionales son normales."],
+equilibrio:["verde","Buena regulación emocional."]
+},
+q3:{
+nunca:["rojo","Inconformidad constante afecta la salud mental."],
+comparacion:["naranja","Compararte distorsiona tu percepción."],
+inseguro:["amarillo","Inseguridad ocasional es humana."],
+aceptacion:["verde","Aceptación saludable."]
+},
+q4:{
+ansiedad:["naranja","Ansiedad social relacionada con alimentación."],
+observado:["amarillo","Percepción de juicio externo."],
+neutral:["verde","Equilibrio social adecuado."],
+tranquilo:["verde","Seguridad emocional en entorno social."]
+},
+q5:{
+castigo:["rojo","Autocastigo constante afecta el bienestar."],
+control:["naranja","Compensación frecuente puede volverse patrón."],
+culpa:["amarillo","Culpa ocasional es humana."],
+normal:["verde","Relación madura y equilibrada."]
+}
+};
+
+function analizar(){
+
+let preguntas=["q1","q2","q3","q4","q5"];
+let alerta=false;
+let nivel="equilibrado";
+let resumen="";
+
+for(let p of preguntas){
+
+let seleccion=document.querySelector('input[name="'+p+'"]:checked');
+if(!seleccion){
+alert("Responde todas las preguntas.");
+return;
+}
+
+let datos=respuestas[p][seleccion.value];
+let caja=document.getElementById("r-"+p);
+
+caja.className="result "+datos[0];
+caja.innerText=datos[1];
+caja.style.display="block";
+
+if(datos[0]=="rojo"){alerta=true;nivel="atención importante";}
+else if(datos[0]=="naranja" && nivel!="atención importante"){nivel="áreas por trabajar";}
+
+resumen+=datos[1]+"\n";
+}
+
+if(alerta && navigator.vibrate){
+navigator.vibrate([200,100,200]);
+}
+
+let resumenFinal=document.getElementById("resumenFinal");
+resumenFinal.style.display="block";
+resumenFinal.innerText="Resumen general:\n\nTu estado actual refleja "+nivel+".\n\nEsto no es un diagnóstico. Es una guía para reflexionar con honestidad.";
+
+localStorage.setItem("resultadoEvaluacion",resumen);
+}
+
+function enviarWhatsApp(){
+let datos=localStorage.getItem("resultadoEvaluacion");
+if(!datos){
+alert("Primero analiza.");
+return;
+}
+window.open("https://wa.me/50589850143?text="+encodeURIComponent("Resultados de evaluación:\n\n"+datos));
+}
+
+</script>
+
+</body>
+</html>
